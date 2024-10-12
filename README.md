@@ -1,3 +1,3 @@
 # Vulkan Engine from scratch
 
-Tutorial on how to build a simple vulkan engine from scratch by creating Pong.
+A simple 2d game youtube tutorial thing. Pretty cool to learn from
