@@ -93,9 +93,9 @@ internal Entity *create_entity(
     return e;
 }
 
-//########################################################################################
-//                      Functions related to the Game
-//########################################################################################
+// ########################################################################################
+//                       Functions related to the Game
+// ########################################################################################
 internal Rect get_bounding_box(Entity *e)
 {
     CAKEZ_ASSERT(e, "No Entity supplied");
@@ -131,7 +131,7 @@ bool init_game(GameState *gameState, InputState *input)
                       {spriteOffsetBall, ballSize},
                       ASSET_SPRITE_BALL);
     add_component(e, COMPONENT_BALL);
-    e->vel = {INITIAL_X_VEL, INITIAL_X_VEL/2.0f};
+    e->vel = {INITIAL_X_VEL, INITIAL_X_VEL / 2.0f};
     gameState->paddleSpeed = INITIAL_Y_VEL_PADDLE;
 
     return true;
@@ -145,7 +145,7 @@ internal void update_level(GameState *gameState, InputState *input, UIState *ui,
 
     // Input
     {
-        if(key_pressed_this_frame(input, KEY_ESC))
+        if (key_pressed_this_frame(input, KEY_ESC))
         {
             gameState->gameState = GAME_STATE_MAIN_MENU;
         }
@@ -323,7 +323,7 @@ internal void update_level(GameState *gameState, InputState *input, UIState *ui,
 
             // Increase the Speed of the Ball
             {
-                float speedUp = 25.0f;
+                float speedUp = 35.0f;
 
                 if (e->vel.x < 0.0f)
                 {
@@ -387,7 +387,7 @@ void update_game(GameState *gameState, InputState *input, UIState *ui, float dt)
             do_text(ui, {400.0f, 350.0f}, "Score: ");
             do_number(ui, {495.0f, 350.0f}, gameState->score);
         }
-        
+
         ui->globalLayer++;
         if (do_button(ui, input, ASSET_SPRITE_BUTTON_64_16, line_id(1),
                       {400.0f, 400.0f, 196.0f, 48.0f}, "Restart"))
@@ -413,9 +413,8 @@ void update_game(GameState *gameState, InputState *input, UIState *ui, float dt)
             gameState->gameState = GAME_STATE_MAIN_MENU;
         }
         ui->globalLayer--;
-        
+
         break;
     }
-
     }
 }
