@@ -105,7 +105,7 @@ void do_text(UIState *ui, Vec2 pos, char *text)
     }
 }
 
-void do_number(UIState* ui, Vec2 pos, int number)
+void do_number(UIState *ui, Vec2 pos, int number)
 {
     if (ui->labelCount < MAX_LABELS)
     {

@@ -29,7 +29,6 @@ void _log(char *prefix, TextColor color, const char *msg, Args... args)
             __debugbreak();                \
         }                                  \
     }
-
-#elif
+#else
 #define CAKEZ_ASSERT(x, msg, ...)
 #endif
